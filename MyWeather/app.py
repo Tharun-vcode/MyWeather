@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-API_KEY = "f46995d31e6bf8086bc5f8338d39bd68"  # Replace with your actual API key
+API_KEY = "ENTER_API_KEY_HERE"  # Replace with your actual API key
 
 @app.route('/weather')
 def weather():
@@ -90,4 +90,5 @@ def serve_index():
     return render_template('index.html')
 
 if __name__ == "__main__":
+
     app.run(debug=True)
