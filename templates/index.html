@@ -138,15 +138,24 @@
                     } else {
                         // Display current weather
                         const current = data.current;
+
+                        const sunriseTime = new Date(current.sunrise * 1000).toLocaleTimeString();
+                        const sunsetTime = new Date(current.sunset * 1000).toLocaleTimeString();
+
                         document.getElementById('weatherResult').innerHTML = `
-                            <div class="current-weather">
-                                <h3>${current.city_name}</h3>
-                                <img src="https://openweathermap.org/img/wn/${current.icon}@2x.png" alt="${current.condition}" />
-                                <p><strong>Temperature:</strong> ${current.temp.toFixed(1)} °C (Feels like ${current.feels_like.toFixed(1)} °C)</p>
-                                <p><strong>Humidity:</strong> ${current.humidity}%</p>
-                                <p><strong>Condition:</strong> ${current.condition}</p>
+                             <div class="current-weather">
+                                 <h3>${current.city_name}</h3>
+                                 <img src="https://openweathermap.org/img/wn/${current.icon}@2x.png" alt="${current.condition}" />
+                                 <p><strong>Temperature:</strong> ${current.temp.toFixed(1)} °C (Feels like ${current.feels_like.toFixed(1)} °C)</p>
+                                 <p><strong>Humidity:</strong> ${current.humidity}%</p>
+                                 <p><strong>Pressure:</strong> ${current.pressure} hPa</p>
+                                 <p><strong>Wind Speed:</strong> ${current.wind_speed} m/s</p>
+                                 <p><strong>Visibility:</strong> ${current.visibility} km</p>
+                                 <p><strong>Sunrise:</strong> ${sunriseTime}</p>
+                                 <p><strong>Sunset:</strong> ${sunsetTime}</p>
+                                 <p><strong>Condition:</strong> ${current.condition}</p>
                             </div>
-                        `;
+`;
 
                         // Create forecast chart
                         if (data.forecast && data.forecast.length > 0) {
@@ -279,4 +288,5 @@
         // getWeather();
     </script>
 </body>
+
 </html>
