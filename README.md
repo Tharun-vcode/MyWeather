@@ -10,7 +10,14 @@ This project demonstrates practical backend engineering principles used in real-
 # 🚀 Live Demo
 
 Deployed on Render  
-(Add your deployed URL here)
+https://myweather-gc2b.onrender.com/
+
+---
+
+# Screen Shots 
+
+<img width="1897" height="1003" alt="image" src="https://github.com/user-attachments/assets/003f4e6a-9fff-4eaf-9277-0bf8d034e561" />
+<img width="1894" height="995" alt="image" src="https://github.com/user-attachments/assets/9b0f4fd2-34ab-49ac-9742-30974c4f9ea1" />
 
 ---
 
