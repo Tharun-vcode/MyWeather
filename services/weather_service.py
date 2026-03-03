@@ -53,10 +53,16 @@ def fetch_weather(city):
             "temp": current_data["main"]["temp"],
             "feels_like": current_data["main"]["feels_like"],
             "humidity": current_data["main"]["humidity"],
+            "pressure": current_data["main"]["pressure"],
+            "wind_speed": current_data["wind"]["speed"],
+            "visibility": current_data.get("visibility", 0) / 1000,  # convert meters to km
             "condition": current_data["weather"][0]["description"].capitalize(),
-            "icon": current_data["weather"][0]["icon"]
-        },
+            "icon": current_data["weather"][0]["icon"],
+            "sunrise": current_data["sys"]["sunrise"],
+            "sunset": current_data["sys"]["sunset"]
+       },
         "forecast": forecast_data
     }
+
 
     return result, 200
